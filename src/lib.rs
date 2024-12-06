@@ -290,6 +290,11 @@ pub fn parse_edid(input: &[u8]) -> IResult<&[u8], EDID, VerboseError<&[u8]>> {
     ))
 }
 
+pub fn parse(data: &[u8]) -> nom::IResult<&[u8], EDID, VerboseError<&[u8]>> {
+	parse_edid(data)
+}
+
+
 //#[cfg(test)]
 //mod tests {
 //	use super::*;
